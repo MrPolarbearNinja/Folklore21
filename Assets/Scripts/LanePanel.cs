@@ -39,6 +39,15 @@ public class LanePanel : MonoBehaviour
         UpdateValueDisplay();
     }
 
+    public void ClearLane()
+    {
+        foreach (Transform child in cardContainer)
+            Destroy(child.gameObject);
+        cards.Clear();
+
+        UpdateValueDisplay();
+    }
+
     void UpdateValueDisplay()
     {
         int total = 0;

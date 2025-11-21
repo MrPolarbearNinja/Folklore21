@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class Deck : MonoBehaviour
 {
     public List<Card> cards;
+    public TMP_Text cardsText; 
 
     private void Awake()
     {
@@ -49,6 +51,7 @@ public class Deck : MonoBehaviour
 
         Card drawnCard = cards[0];
         cards.RemoveAt(0);
+        cardsText.text = cards.Count.ToString();
         return drawnCard;
     }
 
