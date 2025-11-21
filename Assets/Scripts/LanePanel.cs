@@ -10,6 +10,7 @@ public class LanePanel : MonoBehaviour
     public int score;                   // The score for this Lane
     public GameObject cardPrefab;        //prefab to spawn
     private List<Card> cards = new List<Card>();
+           
 
     void Start()
     {
