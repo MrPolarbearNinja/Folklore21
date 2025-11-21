@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     [Header("References")]
     public Deck deck;
+    public Deck discard;
     public FieldCard currentCard;
     public FieldCard nextCard;
 
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        deck.CreateDeck();
+        deck.Shuffle();
         nextCard.ChangeCard(deck.DrawCard());
         currentCard.ChangeCard(deck.DrawCard());
     }
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
             if (lane.score == 21)
             {
                 points += (int)Score.Normal_21;
+                discard.cards.AddRange(lane.GetAllCards());
                 lane.ClearLane();
             }
 

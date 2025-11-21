@@ -7,12 +7,6 @@ public class Deck : MonoBehaviour
     public List<Card> cards;
     public TMP_Text cardsText; 
 
-    private void Awake()
-    {
-        CreateDeck();
-        Shuffle();
-    }
-
     // Create a standard 52-card deck
     public void CreateDeck()
     {
@@ -25,6 +19,33 @@ public class Deck : MonoBehaviour
                 cards.Add(new Card(suit, rank));
             }
         }
+        if (cardsText != null)
+            cardsText.text = cards.Count.ToString();
+    }
+
+    public void ResicleFromDiscard()
+    {
+        cards.AddRange(GameManager.Instance.discard.cards);
+        GameManager.Instance.discard.ClearDeck();
+        if (cardsText != null)
+            cardsText.text = cards.Count.ToString();
+    }
+
+    public void AddCard(Card card)
+    {
+        cards.Add(card);
+        if (cardsText != null)
+            cardsText.text = cards.Count.ToString();
+    }
+    public void RemoveCard(Card card)
+    {
+        cards.Remove(card);
+        if (cardsText != null)
+            cardsText.text = cards.Count.ToString();
+    }
+    public void ClearDeck()
+    {
+        cards.Clear();
     }
 
     // Fisher–Yates shuffle
@@ -44,14 +65,15 @@ public class Deck : MonoBehaviour
     {
         if (cards.Count == 0)
         {
-            Debug.LogWarning("Deck is empty, regenerating...");
-            CreateDeck();
+            Debug.Log("Deck is empty, regenerating...");
+            ResicleFromDiscard();
             Shuffle();
         }
 
         Card drawnCard = cards[0];
         cards.RemoveAt(0);
-        cardsText.text = cards.Count.ToString();
+        if (cardsText.text != null)
+            cardsText.text = cards.Count.ToString();
         return drawnCard;
     }
 
