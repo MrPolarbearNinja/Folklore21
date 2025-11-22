@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        StartGame();
+    }
+
+    public void StartGame()
+    {
         deck.CreateDeck();
         deck.Shuffle();
         nextCard.ChangeCard(deck.DrawCard());
@@ -101,6 +106,11 @@ public class GameManager : MonoBehaviour
                 lane.ClearLane();
                 return;
             }
+            else if (lane.score > 21)
+            {
+                Debug.Log("You Blew up");
+                RestartGame();
+            }
         }
         comboFlag = false;
     }
@@ -137,6 +147,15 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Points: " + points;
         
         comboFlag = true;
+    }
+
+    public void RestartGame()
+    {
+        discard.ClearDeck();
+        deck.ClearDeck();
+        ClearAllLanes();
+
+        StartGame();
     }
 
 }

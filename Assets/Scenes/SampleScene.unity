@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   cardsText: {fileID: 0}
+  explosionEffect: {fileID: 0}
 --- !u!1 &155341570
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   cardsText: {fileID: 0}
+  explosionEffect: {fileID: 0}
 --- !u!224 &359902604 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
@@ -637,6 +639,7 @@ MonoBehaviour:
   discard: {fileID: 193616501}
   currentCard: {fileID: 1165925305}
   nextCard: {fileID: 1871310447}
+  CurrentLane: {fileID: 0}
   points: 0
   scoreText: {fileID: 171309916}
   lanePanels:
@@ -846,6 +849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: []
   cardsText: {fileID: 851198245}
+  explosionEffect: {fileID: 11400000, guid: 7b61a1b572d721144b3e05d730b8832e, type: 2}
 --- !u!1001 &1102550706
 PrefabInstance:
   m_ObjectHideFlags: 0
