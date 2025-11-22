@@ -8,7 +8,7 @@ public class LanePanel : MonoBehaviour
     public Transform cardContainer;     // Vertical Layout Group parent
     public TMP_Text valueText;          // Text at bottom showing total value
     public int score;                   // The score for this Lane
-    public GameObject cardPrefab;        //prefab to spawn
+    public GameObject cardPrefab;       // prefab to spawn
     private List<Card> cards = new List<Card>();
            
 
@@ -25,10 +25,12 @@ public class LanePanel : MonoBehaviour
     public void AddCard(Card card)
     {
         cards.Add(card);
-
         GameObject newCard = Instantiate(cardPrefab, cardContainer);
         newCard.GetComponent<FieldCard>().card = card;
         UpdateValueDisplay();
+        GameManager.Instance.CurrentLane = this;
+        card.ActivateMagic();
+
         GameManager.Instance.NextTurn();
     }
 

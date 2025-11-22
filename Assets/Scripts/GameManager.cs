@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public Deck discard;
     public FieldCard currentCard;
     public FieldCard nextCard;
+    public LanePanel CurrentLane;     //The lane that had card played at last
 
     public int points;
     public TMP_Text scoreText;

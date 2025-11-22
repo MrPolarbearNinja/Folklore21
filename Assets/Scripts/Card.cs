@@ -1,11 +1,17 @@
 using UnityEngine;
 
+public enum CardType
+{
+    Normal,
+    Magic
+}
 public enum Suit
 {
     Clubs,
     Diamonds,
     Hearts,
-    Spades
+    Spades,
+    Explotion
 }
 
 public enum Rank
@@ -22,7 +28,8 @@ public enum Rank
     Ten = 10,
     Jack = 11,
     Queen = 12,
-    King = 13
+    King = 13,
+    Magic = 0
 }
 
 [System.Serializable]
@@ -30,16 +37,29 @@ public class Card
 {
     public Suit suit;
     public Rank rank;
+    public CardType cardType;
 
-    public Card(Suit suit, Rank rank)
+    public ScriptableObject magicEffect;
+
+    public Card(Suit suit, Rank rank, CardType type = CardType.Normal, ScriptableObject effect = null)
     {
         this.suit = suit;
         this.rank = rank;
+        this.cardType = type;
+        this.magicEffect = effect;
     }
 
     public int GetValue()
     {
         return (int)rank;
+    }
+
+    public void ActivateMagic()
+    {
+        if (cardType != CardType.Magic) return;
+        if (magicEffect == null) return;
+
+        (magicEffect as IMagicEffect)?.Activate();
     }
 
     public override string ToString()

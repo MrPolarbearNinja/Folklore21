@@ -5,22 +5,41 @@ using TMPro;
 public class Deck : MonoBehaviour
 {
     public List<Card> cards;
-    public TMP_Text cardsText; 
+    public TMP_Text cardsText;
+
+    public ScriptableObject explosionEffect;
 
     // Create a standard 52-card deck
     public void CreateDeck()
     {
+        Suit[] validSuits = { Suit.Clubs, Suit.Diamonds, Suit.Hearts, Suit.Spades };
+        Rank[] validRanks =
+        {
+            Rank.Two, Rank.Three, Rank.Four, Rank.Five, Rank.Six,
+            Rank.Seven, Rank.Eight, Rank.Nine, Rank.Ten,
+            Rank.Jack, Rank.Queen, Rank.King, Rank.Ace
+        };
         cards = new List<Card>();
 
-        foreach (Suit suit in System.Enum.GetValues(typeof(Suit)))
+        foreach (var suit in validSuits)
         {
-            foreach (Rank rank in System.Enum.GetValues(typeof(Rank)))
+            foreach (var rank in validRanks)
             {
                 cards.Add(new Card(suit, rank));
             }
         }
         if (cardsText != null)
             cardsText.text = cards.Count.ToString();
+
+        //temp add 8 explosions to the deck
+        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
     }
 
     public void ResicleFromDiscard()
