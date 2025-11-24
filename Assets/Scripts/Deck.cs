@@ -36,10 +36,7 @@ public class Deck : MonoBehaviour
         cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
         cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
         cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
-        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
-        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
-        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
-        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+
     }
 
     public void ResicleFromDiscard()

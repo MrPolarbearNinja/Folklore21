@@ -9,7 +9,10 @@ public class LanePanel : MonoBehaviour
     public TMP_Text valueText;          // Text at bottom showing total value
     public int score;                   // The score for this Lane
     public GameObject cardPrefab;       // prefab to spawn
+    public GameObject ghostCardPrefab;  // prefab to spawn
     private List<Card> cards = new List<Card>();
+
+    private GameObject ghostCard;
            
 
     void Start()
@@ -21,9 +24,29 @@ public class LanePanel : MonoBehaviour
     {
         AddCard(GameManager.Instance.currentCard.card);
     }
+    public void LaneHover()
+    {
+        SpawnGhostCard(GameManager.Instance.currentCard.card);
+    }
+    public void LaneUnHover()
+    {
+        DeSpawnGhostCard();
+    }
+
+    public void SpawnGhostCard(Card card)
+    {
+        GameObject newCard = Instantiate(ghostCardPrefab, cardContainer);
+        ghostCard = newCard;
+        newCard.GetComponent<FieldCard>().card = card;
+    }
+    public void DeSpawnGhostCard()
+    {
+        Destroy(ghostCard);
+    }
 
     public void AddCard(Card card)
     {
+        DeSpawnGhostCard();
         cards.Add(card);
         GameObject newCard = Instantiate(cardPrefab, cardContainer);
         newCard.GetComponent<FieldCard>().card = card;

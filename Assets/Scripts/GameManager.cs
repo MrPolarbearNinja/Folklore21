@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     public int points;
     public TMP_Text scoreText;
+    public GameObject lanePrefab;
+    public Transform lanePanel;
 
     private int comboCounter;
     private bool comboFlag;
@@ -74,27 +76,30 @@ public class GameManager : MonoBehaviour
 
     public void ScoreProccess()
     {
-        //Check if all lanes have the same score
-        if (lanePanels.All(c => c.score == lanePanels[0].score))
+        if (lanePanels.Count >= 5)
         {
-            AddPoints(Score.Five_of_a_Kind);
-            ClearAllLanes();
-            return;
+            //Check if all lanes have the same score
+            if (lanePanels.All(c => c.score == lanePanels[0].score) && lanePanels[0].score != 0)
+            {
+                AddPoints(Score.Five_of_a_Kind);
+                ClearAllLanes();
+                return;
+            }
+
+            //Check if all lanes are in sequence
+            List<int> scores = lanePanels.Select(c => c.score).ToList();
+
+            int min = scores.Min();
+            int max = scores.Max();
+
+            if (scores.Distinct().Count() == scores.Count && (max - min + 1) == scores.Count && min != 0)
+            {
+                AddPoints(Score.Straight);
+                ClearAllLanes();
+                return;
+            }
         }
-
-        //Check if all lanes are in sequence
-        List<int> scores = lanePanels.Select(c => c.score).ToList();
-
-        int min = scores.Min();
-        int max = scores.Max();
-
-        if (scores.Distinct().Count() == scores.Count && (max - min + 1) == scores.Count)
-        {
-            AddPoints(Score.Straight);
-            ClearAllLanes();
-            return;
-        }
-
+        
 
         //check each lane
         foreach (LanePanel lane in lanePanels)
@@ -158,4 +163,9 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
+    public void AddLane()
+    {
+        GameObject newLane = Instantiate(lanePrefab, lanePanel);
+        lanePanels.Add(newLane.GetComponent<LanePanel>());
+    }
 }
