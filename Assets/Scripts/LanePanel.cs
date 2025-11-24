@@ -35,6 +35,8 @@ public class LanePanel : MonoBehaviour
 
     public void SpawnGhostCard(Card card)
     {
+        if (!IsLegal(card))
+            return;
         GameObject newCard = Instantiate(ghostCardPrefab, cardContainer);
         ghostCard = newCard;
         newCard.GetComponent<FieldCard>().card = card;
@@ -44,8 +46,15 @@ public class LanePanel : MonoBehaviour
         Destroy(ghostCard);
     }
 
+    public bool IsLegal(Card card)
+    {
+        return (score + card.GetValue() <= 21);
+    }
+
     public void AddCard(Card card)
     {
+        if (!IsLegal(card))
+            return;
         DeSpawnGhostCard();
         cards.Add(card);
         GameObject newCard = Instantiate(cardPrefab, cardContainer);
@@ -90,9 +99,6 @@ public class LanePanel : MonoBehaviour
         foreach (var c in cards)
         {
             int value = c.GetValue();
-
-            if (value > 10)
-                value = 10;
 
             total += value;
 

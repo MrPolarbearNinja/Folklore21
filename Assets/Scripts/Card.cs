@@ -51,7 +51,10 @@ public class Card
 
     public int GetValue()
     {
-        return (int)rank;
+        int value = (int)rank;
+        if (value > 10)
+            value = 10;
+        return value;
     }
 
     public void ActivateMagic()

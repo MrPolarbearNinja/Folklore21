@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using DG.Tweening;
 
 public enum Score
 {
@@ -30,12 +31,12 @@ public class GameManager : MonoBehaviour
     public LanePanel CurrentLane;     //The lane that had card played at last
 
     public int points;
-    public TMP_Text scoreText;
+    
+
+    public ScoreSystem scoreSystem;
+
     public GameObject lanePrefab;
     public Transform lanePanel;
-
-    private int comboCounter;
-    private bool comboFlag;
 
 
 
@@ -69,56 +70,25 @@ public class GameManager : MonoBehaviour
     //After a card has been placed down
     public void NextTurn()
     {
-        ScoreProccess();
+        scoreSystem.ScoreProccess();
         currentCard.ChangeCard(nextCard.card);
         nextCard.ChangeCard(deck.DrawCard());
+        CheckIfAnyLaneIsLegal();
     }
 
-    public void ScoreProccess()
+    //checks if you can play the current card, if not, then game over
+    public void CheckIfAnyLaneIsLegal()
     {
-        if (lanePanels.Count >= 5)
-        {
-            //Check if all lanes have the same score
-            if (lanePanels.All(c => c.score == lanePanels[0].score) && lanePanels[0].score != 0)
-            {
-                AddPoints(Score.Five_of_a_Kind);
-                ClearAllLanes();
-                return;
-            }
-
-            //Check if all lanes are in sequence
-            List<int> scores = lanePanels.Select(c => c.score).ToList();
-
-            int min = scores.Min();
-            int max = scores.Max();
-
-            if (scores.Distinct().Count() == scores.Count && (max - min + 1) == scores.Count && min != 0)
-            {
-                AddPoints(Score.Straight);
-                ClearAllLanes();
-                return;
-            }
-        }
-        
-
-        //check each lane
         foreach (LanePanel lane in lanePanels)
         {
-            if (lane.score == 21)
+            if (lane.IsLegal(currentCard.card))
             {
-                AddPoints(Score.Normal_21);
-                discard.cards.AddRange(lane.GetAllCards());
-                lane.ClearLane();
                 return;
             }
-            else if (lane.score > 21)
-            {
-                Debug.Log("You Blew up");
-                RestartGame();
-            }
         }
-        comboFlag = false;
+        ClearAllLanes();
     }
+    
 
     public void ClearAllLanes()
     {
@@ -127,31 +97,6 @@ public class GameManager : MonoBehaviour
             discard.cards.AddRange(lane.GetAllCards());
             lane.ClearLane();
         }
-    }
-
-    public void AddPoints(Score score)
-    {
-        if (!comboFlag)
-            comboCounter = 0;
-
-        comboCounter++;
-        int multiplyer = 1;
-
-        if (comboCounter == 1)
-            multiplyer = 1;
-        else if (comboCounter == 2)
-            multiplyer = 2;
-        else if (comboCounter == 3)
-            multiplyer = 3;
-        else if (comboCounter == 4)
-            multiplyer = 5;
-        else if (comboCounter == 4)
-            multiplyer = 10;
-
-        points += (int)score * multiplyer;
-        scoreText.text = "Points: " + points;
-        
-        comboFlag = true;
     }
 
     public void RestartGame()
