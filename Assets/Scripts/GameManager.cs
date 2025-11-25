@@ -1,9 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using TMPro;
-using System.Linq;
-using DG.Tweening;
+using Fungus;
 
 public enum Score
 {
@@ -29,16 +26,17 @@ public class GameManager : MonoBehaviour
     public FieldCard currentCard;
     public FieldCard nextCard;
     public LanePanel CurrentLane;     //The lane that had card played at last
+    public Flowchart targetFlowchart;
 
     public int points;
-    
 
+    private int tutorialStep = 1;
     public ScoreSystem scoreSystem;
 
     public GameObject lanePrefab;
     public Transform lanePanel;
 
-
+    private bool isInTutorial;
 
     public List<LanePanel> lanePanels = new List<LanePanel>();
 
@@ -56,7 +54,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartGame();
+        StartTutorial();
+    }
+
+    public void StartTutorial()
+    {
+        isInTutorial = true;
+        nextCard.ChangeCard(deck.DrawCard());
+        currentCard.ChangeCard(deck.DrawCard());
     }
 
     public void StartGame()
@@ -70,6 +75,18 @@ public class GameManager : MonoBehaviour
     //After a card has been placed down
     public void NextTurn()
     {
+        if (isInTutorial)
+        {
+            if (tutorialStep == 5)
+            {
+                targetFlowchart.StopBlock("Step5");
+            }
+            else
+            {
+                tutorialStep += 1;
+                targetFlowchart.ExecuteBlock("Step" + tutorialStep);
+            }
+        }
         scoreSystem.ScoreProccess();
         currentCard.ChangeCard(nextCard.card);
         nextCard.ChangeCard(deck.DrawCard());
@@ -86,7 +103,12 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
-        ClearAllLanes();
+        if (isInTutorial)
+        {
+            ProgressTutorial();
+            return;
+        }
+        RestartGame();
     }
     
 
@@ -99,12 +121,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ProgressTutorial()
+    {
+        isInTutorial = false;
+        Fungus.Flowchart.BroadcastFungusMessage("Introduction");
+    }
+
     public void RestartGame()
     {
         discard.ClearDeck();
         deck.ClearDeck();
         ClearAllLanes();
-
         StartGame();
     }
 
