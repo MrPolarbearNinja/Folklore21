@@ -40,15 +40,21 @@ public class LanePanel : MonoBehaviour
         GameObject newCard = Instantiate(ghostCardPrefab, cardContainer);
         ghostCard = newCard;
         newCard.GetComponent<FieldCard>().card = card;
+        valueText.color = new Color(0.22f, 0.18f, 0.24f, 1f);
+        valueText.outlineColor = new Color(0.22f, 0.18f, 0.24f, 1f);
+        UpdateValueDisplay(card.GetValue());
     }
     public void DeSpawnGhostCard()
     {
         Destroy(ghostCard);
+        valueText.color = Color.white;
+        valueText.outlineColor = Color.white;
+        UpdateValueDisplay();
     }
 
     public bool IsLegal(Card card)
     {
-        return (score + card.GetValue() <= 21);
+        return (score + card.GetValue() <= 21 &&  !GameManager.Instance.gamePaused);
     }
 
     public void AddCard(Card card)
@@ -56,6 +62,8 @@ public class LanePanel : MonoBehaviour
         if (!IsLegal(card))
             return;
         DeSpawnGhostCard();
+        GameManager.Instance.currentCard.GetComponent<Animator>().Play("Card_NextCard", 0, 0f);
+        GameManager.Instance.nextCard.GetComponent<Animator>().Play("Card_DrawCard", 0, 0f);
         cards.Add(card);
         GameObject newCard = Instantiate(cardPrefab, cardContainer);
         newCard.GetComponent<FieldCard>().card = card;
@@ -90,7 +98,7 @@ public class LanePanel : MonoBehaviour
         return cards;
     }
 
-    void UpdateValueDisplay()
+    void UpdateValueDisplay(int extra = 0)
     {
         int total = 0;
         int aceCount = 0;
@@ -113,7 +121,11 @@ public class LanePanel : MonoBehaviour
             aceCount--;
         }
 
-        valueText.text = total.ToString();
+        
+        if (extra != 0)
+            valueText.text = (total + extra).ToString();
+        else
+            valueText.text = total.ToString();
         score = total;
     }
 }

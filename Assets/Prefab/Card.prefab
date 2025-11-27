@@ -174,7 +174,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8421341557008704981}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -206,4 +206,5 @@ MonoBehaviour:
     rank: 1
     cardType: 0
     magicEffect: {fileID: 0}
+  destroyParticles: {fileID: 3476175688295516741, guid: 98f88eb4035f36d42b5bc7bdbfcbbf58, type: 3}
   spriteDatabase: {fileID: 11400000, guid: 011b0d4dd81e0c84281658d544833abf, type: 2}

@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public LanePanel CurrentLane;     //The lane that had card played at last
     public Flowchart targetFlowchart;
 
+    public bool gamePaused;
+
     public int points;
 
     private int tutorialStep = 1;
@@ -63,13 +65,21 @@ public class GameManager : MonoBehaviour
         nextCard.ChangeCard(deck.DrawCard());
         currentCard.ChangeCard(deck.DrawCard());
     }
+    public void EndTutorial()
+    {
+        isInTutorial = false;
+        gamePaused = false;
+    }
 
     public void StartGame()
     {
+        Debug.Log("Game Start");
         deck.CreateDeck();
         deck.Shuffle();
         nextCard.ChangeCard(deck.DrawCard());
         currentCard.ChangeCard(deck.DrawCard());
+        currentCard.GetComponent<Animator>().Play("Card_NextCard", 0, 0f);
+        Instance.nextCard.GetComponent<Animator>().Play("Card_DrawCard", 0, 0f);
     }
 
     //After a card has been placed down
@@ -80,6 +90,7 @@ public class GameManager : MonoBehaviour
             if (tutorialStep == 5)
             {
                 targetFlowchart.StopBlock("Step5");
+                gamePaused = true;
             }
             else
             {
@@ -108,6 +119,9 @@ public class GameManager : MonoBehaviour
             ProgressTutorial();
             return;
         }
+        currentCard.GetComponent<Animator>().Play("Card_FallDown", 0, 0f);
+        Instance.nextCard.GetComponent<Animator>().Play("Card_FallDown", 0, 0f);
+        
         RestartGame();
     }
     
@@ -123,8 +137,13 @@ public class GameManager : MonoBehaviour
 
     public void ProgressTutorial()
     {
-        isInTutorial = false;
         Fungus.Flowchart.BroadcastFungusMessage("Introduction");
+    }
+    public void ClearTutorialBoard()
+    {
+        currentCard.GetComponent<Animator>().Play("Card_FallDown", 0, 0f);
+        Instance.nextCard.GetComponent<Animator>().Play("Card_FallDown", 0, 0f);
+        ClearAllLanes();
     }
 
     public void RestartGame()
