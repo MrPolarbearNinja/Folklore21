@@ -35,13 +35,20 @@ public class LanePanel : MonoBehaviour
 
     public void SpawnGhostCard(Card card)
     {
-        if (!IsLegal(card))
-            return;
-        GameObject newCard = Instantiate(ghostCardPrefab, cardContainer);
-        ghostCard = newCard;
-        newCard.GetComponent<FieldCard>().card = card;
-        valueText.color = new Color(0.22f, 0.18f, 0.24f, 1f);
-        valueText.outlineColor = new Color(0.22f, 0.18f, 0.24f, 1f);
+        if (IsLegal(card))
+        {
+            GameObject newCard = Instantiate(ghostCardPrefab, cardContainer);
+            ghostCard = newCard;
+            newCard.GetComponent<FieldCard>().card = card;
+            valueText.color = new Color(0, 0.7f, 0, 1);
+            valueText.outlineColor = Color.black;
+        }
+        else
+        {
+            valueText.color = new Color(0.7f, 0, 0, 1);
+            valueText.outlineColor = Color.red;
+        }
+        
         UpdateValueDisplay(card.GetValue());
     }
     public void DeSpawnGhostCard()
@@ -54,7 +61,17 @@ public class LanePanel : MonoBehaviour
 
     public bool IsLegal(Card card)
     {
-        return (score + card.GetValue() <= 21 &&  !GameManager.Instance.gamePaused);
+        int aceCount = 0;
+        int total = 0;
+
+        foreach (Card c in cards)
+        {
+            total += c.GetValue();
+            if (c.rank == Rank.Ace)
+                aceCount++;
+
+        }
+        return ((total + card.GetValue()) <= 21 );
     }
 
     public void AddCard(Card card)
@@ -103,7 +120,7 @@ public class LanePanel : MonoBehaviour
         int total = 0;
         int aceCount = 0;
 
-        // Blackjack-style ace logic
+        total += extra;
         foreach (var c in cards)
         {
             int value = c.GetValue();
@@ -114,18 +131,16 @@ public class LanePanel : MonoBehaviour
                 aceCount++;
         }
 
-        // Handle Ace = 11 optimization
         while (aceCount > 0 && total + 10 <= 21)
         {
-            total += 10;
+            if (total < 21)
+                total += 10;
             aceCount--;
         }
 
         
-        if (extra != 0)
-            valueText.text = (total + extra).ToString();
-        else
-            valueText.text = total.ToString();
+
+        valueText.text = total.ToString();
         score = total;
     }
 }

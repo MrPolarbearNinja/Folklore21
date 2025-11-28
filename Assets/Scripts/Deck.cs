@@ -9,6 +9,12 @@ public class Deck : MonoBehaviour
 
     public ScriptableObject explosionEffect;
 
+    public void Start()
+    {
+        if (cardsText != null)
+            cardsText.text = cards.Count.ToString();
+    }
+
     // Create a standard 52-card deck
     public void CreateDeck()
     {
@@ -32,10 +38,10 @@ public class Deck : MonoBehaviour
             cardsText.text = cards.Count.ToString();
 
         //temp add 8 explosions to the deck
-        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
-        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
-        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
-        cards.Add(new Card(Suit.Explotion, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Hero, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Hero, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Hero, Rank.Magic, CardType.Magic, explosionEffect));
+        cards.Add(new Card(Suit.Hero, Rank.Magic, CardType.Magic, explosionEffect));
 
     }
 

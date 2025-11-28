@@ -11,7 +11,9 @@ public enum Suit
     Diamonds,
     Hearts,
     Spades,
-    Explotion
+    Hero,
+    Copycat,
+    Thief
 }
 
 public enum Rank

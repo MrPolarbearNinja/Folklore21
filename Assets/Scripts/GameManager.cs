@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public bool gamePaused;
 
     public int points;
+    public int coin;
 
     private int tutorialStep = 1;
     public ScoreSystem scoreSystem;
@@ -119,10 +120,16 @@ public class GameManager : MonoBehaviour
             ProgressTutorial();
             return;
         }
-        currentCard.GetComponent<Animator>().Play("Card_FallDown", 0, 0f);
-        Instance.nextCard.GetComponent<Animator>().Play("Card_FallDown", 0, 0f);
-        
-        RestartGame();
+        //currentCard.GetComponent<Animator>().Play("Card_FallDown", 0, 0f);
+        //Instance.nextCard.GetComponent<Animator>().Play("Card_FallDown", 0, 0f);
+
+        GameOver();
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Hello");
+        Fungus.Flowchart.BroadcastFungusMessage("GameOver");
     }
     
 
