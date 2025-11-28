@@ -35,6 +35,8 @@ public class LanePanel : MonoBehaviour
 
     public void SpawnGhostCard(Card card)
     {
+        if (GameManager.Instance.gamePaused)
+            return;
         if (IsLegal(card))
         {
             GameObject newCard = Instantiate(ghostCardPrefab, cardContainer);
@@ -61,6 +63,9 @@ public class LanePanel : MonoBehaviour
 
     public bool IsLegal(Card card)
     {
+        if (GameManager.Instance.gamePaused)
+            return false;
+
         int aceCount = 0;
         int total = 0;
 
