@@ -106,6 +106,7 @@ public class LanePanel : MonoBehaviour
 
     public void ClearLane()
     {
+        GameManager.Instance.discard.cards.AddRange(cards);
         foreach (Transform child in cardContainer)
         {
             Destroy(child.gameObject);

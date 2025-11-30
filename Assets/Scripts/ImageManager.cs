@@ -5,26 +5,24 @@ using UnityEngine.UI;
 
 public class ImageManager : MonoBehaviour
 {
-    public Image image;
+    public List<GameObject> backgrounds = new List<GameObject>();
 
-
-    public void FadeInRight()
+    public void Start()
     {
-        image.GetComponent<Animator>().SetTrigger("FadeInRight");
-    }
-    public void FadeInLeft()
-    {
-
+        ChangeBackground(0);
     }
 
-    public void Fade()
+    public void ChangeBackground(int newIndex)
     {
+        int i = 0;
+        foreach (GameObject bg in backgrounds)
+        {
+            bg.SetActive(false);
+            if (i == newIndex)
+                bg.SetActive(true);
+            i++;
+        }
 
-    }
-
-    public void ChangeImage(Sprite newImage)
-    {
-        image.sprite = newImage;
     }
 
 }

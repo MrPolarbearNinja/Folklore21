@@ -8,6 +8,7 @@ using DG.Tweening;
 public class ScoreSystem : MonoBehaviour
 {
     public TMP_Text scoreText;
+    public TMP_Text finalScoreText;
     private int comboCounter;
     private bool comboFlag;
     public ParticleSystem sparkles;
@@ -45,7 +46,6 @@ public class ScoreSystem : MonoBehaviour
             if (lane.score == 21)
             {
                 AddPoints(Score.Normal_21);
-                GameManager.Instance.discard.cards.AddRange(lane.GetAllCards());
                 lane.ClearLane();
                 return;
             }
@@ -94,5 +94,6 @@ public class ScoreSystem : MonoBehaviour
         sparkles.Play();
 
         comboFlag = true;
+        finalScoreText.text = "You Won!\nFinal Score: " + GameManager.Instance.points.ToString();
     }
 }

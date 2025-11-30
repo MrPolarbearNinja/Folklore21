@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     public int points;
     public int coin;
+    public int adventureStage = 0;
 
     private int tutorialStep = 1;
     public ScoreSystem scoreSystem;
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         isInTutorial = false;
         gamePaused = false;
+        ProgressAdventure();
     }
 
     public void StartGame()
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Start");
         deck.CreateDeck();
         deck.Shuffle();
+        discard.ClearDeck();
         nextCard.ChangeCard(deck.DrawCard());
         currentCard.ChangeCard(deck.DrawCard());
         currentCard.GetComponent<Animator>().Play("Card_NextCard", 0, 0f);
@@ -128,16 +131,33 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Hello");
-        Fungus.Flowchart.BroadcastFungusMessage("GameOver");
+        adventureStage = 0;
+        Flowchart.BroadcastFungusMessage("GameOver");
     }
-    
+    //At the store when you click continue
+    public void Continue()
+    {
+        Flowchart.BroadcastFungusMessage("Continue");
+    }
+
+    public void ProgressAdventure()
+    {
+        string message = "Adventure" + adventureStage.ToString();
+        Flowchart.BroadcastFungusMessage(message);
+        adventureStage += 1;
+    }
+
+    public void VictoryTrigger()
+    {
+        Flowchart.BroadcastFungusMessage("Ending");
+    }
+
 
     public void ClearAllLanes()
     {
         foreach (LanePanel lane in lanePanels)
         {
-            discard.cards.AddRange(lane.GetAllCards());
+
             lane.ClearLane();
         }
     }
@@ -155,10 +175,16 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        discard.ClearDeck();
-        deck.ClearDeck();
         ClearAllLanes();
-        StartGame();
+        discard.AddCard(nextCard.card);
+        discard.AddCard(currentCard.card);
+        deck.ResicleFromDiscard();
+        deck.Shuffle();
+        nextCard.ChangeCard(deck.DrawCard());
+        currentCard.ChangeCard(deck.DrawCard());
+        currentCard.GetComponent<Animator>().Play("Card_NextCard", 0, 0f);
+        Instance.nextCard.GetComponent<Animator>().Play("Card_DrawCard", 0, 0f);
+        ProgressAdventure();
     }
 
     public void AddLane()

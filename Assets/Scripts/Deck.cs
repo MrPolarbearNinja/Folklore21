@@ -89,6 +89,7 @@ public class Deck : MonoBehaviour
         {
             Debug.Log("Deck is empty, regenerating...");
             ResicleFromDiscard();
+            GameManager.Instance.ProgressAdventure();
             Shuffle();
         }
 
