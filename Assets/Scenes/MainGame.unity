@@ -11042,10 +11042,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 2091533806}
-  selectedCommands:
-  - {fileID: 2091533844}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -13594,7 +13592,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 371.95987
-    y: 461.7273
+    y: 460.59094
     width: 113.63635
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -13849,7 +13847,7 @@ MonoBehaviour:
       typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       typeFullname: System.Int32
-      intValue: 4
+      intValue: 5
       boolValue: 0
       floatValue: 0
       stringValue: 
