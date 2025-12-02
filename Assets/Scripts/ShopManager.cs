@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using Fungus;
 
 public class ShopManager : MonoBehaviour
 {
@@ -89,6 +89,7 @@ public class ShopManager : MonoBehaviour
         buttonObj.GetComponent<Button>().interactable = false;
         buttonObj.GetComponent<Animator>().Play("Holding_Unlock", 0, 0f);
         UpdateCoins();
+        Flowchart.BroadcastFungusMessage("UnlockHolding");
     }
 
     public void DisplayLanes()
