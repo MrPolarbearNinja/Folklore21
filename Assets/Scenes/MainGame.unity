@@ -11042,8 +11042,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 2091533806}
+  selectedCommands:
+  - {fileID: 2091533844}
   variables: []
   description: 
   stepPause: 0
@@ -14119,7 +14121,7 @@ MonoBehaviour:
   indentLevel: 0
   animator:
     animatorRef: {fileID: 0}
-    animatorVal: {fileID: 492045466}
+    animatorVal: {fileID: 1798686353}
   stateName:
     stringRef: {fileID: 0}
     stringVal: Background2_FadeIn
