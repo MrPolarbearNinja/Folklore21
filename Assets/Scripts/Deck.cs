@@ -8,6 +8,7 @@ public class Deck : MonoBehaviour
     public TMP_Text cardsText;
 
     public ScriptableObject explosionEffect;
+    public AudioClip drawSound;
 
     public void Start()
     {
@@ -85,6 +86,7 @@ public class Deck : MonoBehaviour
     // Draw the top card from the deck
     public Card DrawCard()
     {
+        GetComponent<AudioSource>().PlayOneShot(drawSound);
         if (cards.Count == 0)
         {
             Debug.Log("Deck is empty, regenerating...");

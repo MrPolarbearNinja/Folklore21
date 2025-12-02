@@ -13,6 +13,7 @@ public class ShopManager : MonoBehaviour
     public TMP_Text lane_cost;
 
     public Deck shopDeck;
+    public GameObject gameHolding;
 
     public void Start()
     {
@@ -76,6 +77,18 @@ public class ShopManager : MonoBehaviour
     public void UpdateCoins()
     {
         fc_text.text = GameManager.Instance.coin.ToString();
+    }
+
+    public void UnlockHolding(GameObject buttonObj)
+    {
+        if (GameManager.Instance.coin < 12)
+            return;
+
+        GameManager.Instance.coin -= 12;
+        gameHolding.SetActive(true);
+        buttonObj.GetComponent<Button>().interactable = false;
+        buttonObj.GetComponent<Animator>().Play("Holding_Unlock", 0, 0f);
+        UpdateCoins();
     }
 
     public void DisplayLanes()
