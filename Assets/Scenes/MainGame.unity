@@ -2209,7 +2209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &394480880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3321,6 +3321,59 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8421341557008704981, guid: dd462f6a5f3123c4b80d89372895af71, type: 3}
   m_PrefabInstance: {fileID: 1664144719}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &585799719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585799721}
+  - component: {fileID: 585799720}
+  m_Layer: 0
+  m_Name: Morgan Le Fay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &585799720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585799719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fb867d2049d41f597aefdd6b19f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: Morgan Le Fay
+  nameColor: {r: 1, g: 0.92944044, b: 0.5330188, a: 1}
+  soundEffect: {fileID: 0}
+  portraits: []
+  portraitsFace: 0
+  setSayDialog: {fileID: 0}
+  description: 
+  effectAudioSource: {fileID: 0}
+  voiceAudioSource: {fileID: 0}
+--- !u!4 &585799721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585799719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &588542987
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,7 +7154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8495156135409556471, guid: 31d827249a630704b8bc5f65928ec665, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -7154,7 +7207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchorMin.x
@@ -7162,7 +7215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_SizeDelta.x
@@ -7202,11 +7255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 461.85397
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -280
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8855,7 +8908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8495156135409556471, guid: 31d827249a630704b8bc5f65928ec665, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -9258,7 +9311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1807877644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10584,7 +10637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4702820955232011167, guid: c65987bc1c893e942875e7fe815fc1f1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10900,6 +10953,12 @@ GameObject:
   - component: {fileID: 2091533834}
   - component: {fileID: 2091533833}
   - component: {fileID: 2091533832}
+  - component: {fileID: 2091533843}
+  - component: {fileID: 2091533842}
+  - component: {fileID: 2091533841}
+  - component: {fileID: 2091533840}
+  - component: {fileID: 2091533845}
+  - component: {fileID: 2091533844}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -10983,8 +11042,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 2091533835}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -11962,7 +12020,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: And you want my help?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -11991,7 +12049,7 @@ MonoBehaviour:
 
     You can rewrite fate.'
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -13109,6 +13167,8 @@ MonoBehaviour:
   - {fileID: 2091533801}
   - {fileID: 2091533807}
   - {fileID: 2091533803}
+  - {fileID: 2091533845}
+  - {fileID: 2091533844}
   - {fileID: 2091533800}
   suppressAllAutoSelections: 0
 --- !u!114 &2091533807
@@ -13584,7 +13644,8 @@ MonoBehaviour:
   blockName: Ending
   description: 
   eventHandler: {fileID: 2091533823}
-  commandList: []
+  commandList:
+  - {fileID: 2091533840}
   suppressAllAutoSelections: 0
 --- !u!114 &2091533825
 MonoBehaviour:
@@ -13946,6 +14007,173 @@ MonoBehaviour:
   - {fileID: 2091533838}
   - {fileID: 2091533837}
   suppressAllAutoSelections: 0
+--- !u!114 &2091533840
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 123
+  indentLevel: 0
+  storyText: ...
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2091533841
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 122
+  indentLevel: 0
+  storyText: ... Hilmir write here
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2091533842
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBlock: {fileID: 2091533843}
+  suppressBlockAutoSelect: 0
+  message: UnlockHolding
+--- !u!114 &2091533843
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 493.28583
+    y: 602.21704
+    width: 132.95453
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 121
+  blockName: UnlockHolding
+  description: 
+  eventHandler: {fileID: 2091533842}
+  commandList:
+  - {fileID: 2091533841}
+  suppressAllAutoSelections: 0
+--- !u!114 &2091533844
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5316d953c7abe498799575550c973535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 125
+  indentLevel: 0
+  animator:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 492045466}
+  stateName:
+    stringRef: {fileID: 0}
+    stringVal: Background2_FadeIn
+  layer:
+    integerRef: {fileID: 0}
+    integerVal: -1
+  time:
+    floatRef: {fileID: 0}
+    floatVal: 0
+--- !u!114 &2091533845
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 124
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 7002233382584926537}
+  targetComponentAssemblyName: ImageManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: ImageManager
+  targetMethod: ChangeBackground
+  targetMethodText: 'ChangeBackground (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 2
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1001 &2100146114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15246,3 +15474,4 @@ SceneRoots:
   - {fileID: 2091533714}
   - {fileID: 164317256}
   - {fileID: 292218819}
+  - {fileID: 585799721}
