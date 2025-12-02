@@ -58,6 +58,12 @@ public class ScoreSystem : MonoBehaviour
         comboFlag = false;
     }
 
+    public void RestartScore()
+    {
+        GameManager.Instance.points = 0;
+        scoreText.text = GameManager.Instance.points.ToString();
+    }
+
 
     public void AddPoints(Score score)
     {

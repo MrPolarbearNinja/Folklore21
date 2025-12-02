@@ -28,6 +28,7 @@ public class FieldCard : MonoBehaviour
         }
     }
 
+
     void OnDestroy()
     {
         if (destroyParticles != null)

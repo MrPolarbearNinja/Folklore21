@@ -182,7 +182,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         ClearAllLanes();
-        discard.AddCard(nextCard.card);
+        discard.AddCard(nextCard.card); 
         discard.AddCard(currentCard.card);
         deck.ResicleFromDiscard();
         deck.Shuffle();
@@ -190,6 +190,7 @@ public class GameManager : MonoBehaviour
         currentCard.ChangeCard(deck.DrawCard());
         currentCard.GetComponent<Animator>().Play("Card_NextCard", 0, 0f);
         Instance.nextCard.GetComponent<Animator>().Play("Card_DrawCard", 0, 0f);
+        scoreSystem.RestartScore();
         ProgressAdventure();
     }
 

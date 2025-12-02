@@ -14,8 +14,6 @@ public class CoinManager : MonoBehaviour
     {
         pointsText.text = GameManager.Instance.points.ToString();
         coinsText.text = GameManager.Instance.coin.ToString();
-
-        
     }
 
     public void giveCoins()
@@ -23,15 +21,21 @@ public class CoinManager : MonoBehaviour
         // Animate A
         DOTween.To(() => GameManager.Instance.points, x =>
         {
-            GameManager.Instance.points = x;
-            pointsText.text = GameManager.Instance.points.ToString();
+            pointsText.text = x.ToString();
         }, 0, 1);
 
         // Animate B
-        DOTween.To(() => GameManager.Instance.coin, x =>
-        {
-            GameManager.Instance.coin = x;
-            coinsText.text = GameManager.Instance.coin.ToString();
-        }, (GameManager.Instance.coin + GameManager.Instance.points)/100, 1);
+        int currentValue = int.Parse(coinsText.text);
+        int start = int.Parse(coinsText.text);
+        int end = GameManager.Instance.coin + GameManager.Instance.coin + GameManager.Instance.points / 100;
+
+        DOTween.To(() => start, x => {
+            start = x;
+            coinsText.text = x.ToString();
+        }, end, 0.5f)
+        .OnComplete(() => currentValue = end);
+
+
+        GameManager.Instance.coin += GameManager.Instance.points / 100;
     }
 }

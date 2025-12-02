@@ -171,4 +171,4 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 2d8c3e9d8776cd34e98646cc337ee9d7, type: 3}
   - suit: 4
     rank: 0
-    sprite: {fileID: 21300000, guid: 8e1557ccaf055034caf7746a3e6eb06e, type: 3}
+    sprite: {fileID: 21300000, guid: 21c595a8ff29d404e9126d4dda3101b9, type: 3}
