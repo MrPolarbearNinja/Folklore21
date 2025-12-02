@@ -1360,7 +1360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &258129456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1932,7 +1932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &394480880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5827,7 +5827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchorMin.x
@@ -5835,7 +5835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5875,11 +5875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 461.85397
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -280
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5801112007726764188, guid: 6e66844608beb85479fec72022484666, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7018,6 +7018,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1467548980}
+    - target: {fileID: 6745068382672891018, guid: 52e2fea2a64b8f54296a9e8a414ad510, type: 3}
+      propertyPath: finalScoreText
+      value: 
+      objectReference: {fileID: 881111219}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7945,7 +7949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09428048, y: 0.042544108}
   m_AnchorMax: {x: 0.56785816, y: 0.37100002}
-  m_AnchoredPosition: {x: -49.977997, y: -39.00699}
+  m_AnchoredPosition: {x: -49.978027, y: -39.00699}
   m_SizeDelta: {x: 138.8, y: 137.22}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1858651973
@@ -8925,6 +8929,12 @@ GameObject:
   - component: {fileID: 2091533819}
   - component: {fileID: 2091533824}
   - component: {fileID: 2091533823}
+  - component: {fileID: 2091533825}
+  - component: {fileID: 2091533827}
+  - component: {fileID: 2091533826}
+  - component: {fileID: 2091533828}
+  - component: {fileID: 2091533830}
+  - component: {fileID: 2091533829}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -8963,7 +8973,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 321
     y: 156
-    width: 77
+    width: 76.352936
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8997,19 +9007,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -9, y: -171}
+  scrollPos: {x: -245.42372, y: -91.308044}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 537
-  zoom: 1
+  zoom: 0.85000014
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 2091533724}
+  selectedCommands:
+  - {fileID: 2091533829}
   variables: []
   description: 
   stepPause: 0
@@ -9245,7 +9257,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 382
     y: 322
-    width: 117
+    width: 113.05881
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9266,6 +9278,7 @@ MonoBehaviour:
   - {fileID: 2091533811}
   - {fileID: 2091533810}
   - {fileID: 2091533734}
+  - {fileID: 2091533830}
   - {fileID: 2091533739}
   - {fileID: 2091533813}
   - {fileID: 2091533736}
@@ -9273,6 +9286,8 @@ MonoBehaviour:
   - {fileID: 2091533742}
   - {fileID: 2091533814}
   - {fileID: 2091533741}
+  - {fileID: 2091533827}
+  - {fileID: 2091533826}
   - {fileID: 2091533758}
   - {fileID: 2091533757}
   - {fileID: 2091533756}
@@ -9280,6 +9295,7 @@ MonoBehaviour:
   - {fileID: 2091533818}
   - {fileID: 2091533815}
   - {fileID: 2091533817}
+  - {fileID: 2091533829}
   - {fileID: 2091533765}
   - {fileID: 2091533754}
   - {fileID: 2091533753}
@@ -9294,6 +9310,8 @@ MonoBehaviour:
   - {fileID: 2091533769}
   - {fileID: 2091533725}
   - {fileID: 2091533809}
+  - {fileID: 2091533825}
+  - {fileID: 2091533828}
   - {fileID: 2091533771}
   - {fileID: 2091533772}
   suppressAllAutoSelections: 0
@@ -9654,7 +9672,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 433
     y: 156
-    width: 83
+    width: 81.99999
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9708,7 +9726,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 784.5
     y: 155.5
-    width: 83
+    width: 81.99999
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9762,7 +9780,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 676
     y: 159
-    width: 84
+    width: 83.88235
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9816,7 +9834,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 561
     y: 158
-    width: 84
+    width: 83.88235
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9924,7 +9942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 44
   indentLevel: 0
-  storyText: You do know that is imposible? Right?
+  storyText: You do know that's imposible...? Right?
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10106,7 +10124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 50
   indentLevel: 0
-  storyText: 'The cards will decite. '
+  storyText: 'The cards will decide. '
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -10133,7 +10151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 49
   indentLevel: 0
-  storyText: This forest is dangerous, but i might be able to choose some faverable
+  storyText: This forest is dangerous, but I might be able to choose some favorable
     outcomes for you.
   description: 
   character: {fileID: 0}
@@ -10570,7 +10588,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 846
     y: 426
-    width: 124
+    width: 122.47057
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -10696,7 +10714,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 585
     y: 284
-    width: 110
+    width: 109.294106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11111,7 +11129,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 980
     y: 424
-    width: 101
+    width: 98.94116
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11550,7 +11568,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 372
     y: 464
-    width: 114
+    width: 111.17645
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11593,7 +11611,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 387
     y: 601
-    width: 88
+    width: 85.764694
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11603,6 +11621,110 @@ MonoBehaviour:
   eventHandler: {fileID: 2091533823}
   commandList: []
   suppressAllAutoSelections: 0
+--- !u!114 &2091533825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 106
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: 22b3e8c9ed1902e46b3f11b7337c0524, type: 3}
+  volume: 1
+  waitUntilFinished: 0
+--- !u!114 &2091533826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 108
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 2.5
+  durationOLD: 0
+--- !u!114 &2091533827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 107
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: 83ad4acd0fc69904c9a5b71a37432c3e, type: 3}
+  volume: 1
+  waitUntilFinished: 0
+--- !u!114 &2091533828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 109
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 0.75
+  durationOLD: 0
+--- !u!114 &2091533829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 111
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: bea154beb0f9c1147b692c56c17d705f, type: 3}
+  volume: 1
+  waitUntilFinished: 0
+--- !u!114 &2091533830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 110
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: bea154beb0f9c1147b692c56c17d705f, type: 3}
+  volume: 1
+  waitUntilFinished: 0
 --- !u!1001 &2100146114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11877,7 +11999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229799892955786269, guid: 34e2e867abd005648a403de87a6d77ad, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.149963
+      value: -24.149971
       objectReference: {fileID: 0}
     - target: {fileID: 6881903834965368233, guid: 34e2e867abd005648a403de87a6d77ad, type: 3}
       propertyPath: m_AnchorMax.x
