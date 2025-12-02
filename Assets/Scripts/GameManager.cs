@@ -140,8 +140,14 @@ public class GameManager : MonoBehaviour
         Flowchart.BroadcastFungusMessage("Continue");
     }
 
+    //When you finish the deck
     public void ProgressAdventure()
     {
+        if (adventureStage >= 5)
+        {
+            VictoryTrigger();
+            return;
+        }
         string message = "Adventure" + adventureStage.ToString();
         Flowchart.BroadcastFungusMessage(message);
         adventureStage += 1;
