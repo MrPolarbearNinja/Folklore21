@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HoldingCell : MonoBehaviour
 {
-    public Card holdingCard;
+    public FieldCard holdingCard;
     public bool empty = true;
 
     public void ChangeCard()
@@ -12,15 +12,16 @@ public class HoldingCell : MonoBehaviour
 
         if (empty)
         {
-            holdingCard = GameManager.Instance.currentCard.card;
+            holdingCard.gameObject.SetActive(true);
+            holdingCard.ChangeCard(GameManager.Instance.currentCard.card);
             GameManager.Instance.NextTurn();
             empty = false;
         }
         else
         {
-            Card tempCard = holdingCard;
-            holdingCard = GameManager.Instance.currentCard.card;
-            GameManager.Instance.currentCard.card = tempCard;
+            Card tempCard = holdingCard.card;
+            holdingCard.ChangeCard(GameManager.Instance.currentCard.card);
+            GameManager.Instance.currentCard.ChangeCard(tempCard);
         }
 
         

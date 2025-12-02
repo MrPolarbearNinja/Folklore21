@@ -1906,6 +1906,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7940435280263355298, guid: dd462f6a5f3123c4b80d89372895af71, type: 3}
   m_PrefabInstance: {fileID: 518485188}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &311744166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3612180208737456862, guid: dd462f6a5f3123c4b80d89372895af71, type: 3}
+  m_PrefabInstance: {fileID: 518485188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac35b45ed6412c0458a2590d6fea7d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &340746085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2845,6 +2856,10 @@ PrefabInstance:
     - target: {fileID: 8421341557008704981, guid: dd462f6a5f3123c4b80d89372895af71, type: 3}
       propertyPath: m_Name
       value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421341557008704981, guid: dd462f6a5f3123c4b80d89372895af71, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14581,7 +14596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &382001894609601606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14685,11 +14700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342c321a0586cb24db4c662749a479a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdingCard:
-    suit: 0
-    rank: 0
-    cardType: 0
-    magicEffect: {fileID: 0}
+  holdingCard: {fileID: 311744166}
   empty: 1
 --- !u!114 &2231349201633147859
 MonoBehaviour:
