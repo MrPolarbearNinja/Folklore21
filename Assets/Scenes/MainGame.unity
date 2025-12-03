@@ -9763,7 +9763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09428048, y: 0.042544108}
   m_AnchorMax: {x: 0.56785816, y: 0.37100002}
-  m_AnchoredPosition: {x: -49.978035, y: -39.00708}
+  m_AnchoredPosition: {x: -49.978027, y: -39.00708}
   m_SizeDelta: {x: 138.8, y: 137.22}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1858651973
@@ -11190,9 +11190,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 2091533824}
+  - {fileID: 2091533806}
   selectedCommands:
-  - {fileID: 2091533855}
+  - {fileID: 2091533845}
   variables: []
   description: 
   stepPause: 0
@@ -14316,7 +14316,7 @@ MonoBehaviour:
       typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       typeFullname: System.Int32
-      intValue: 3
+      intValue: 1
       boolValue: 0
       floatValue: 0
       stringValue: 
@@ -14533,7 +14533,7 @@ MonoBehaviour:
   waitUntilFinished: 0
 --- !u!114 &2091533855
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14560,7 +14560,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &2091533856
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
