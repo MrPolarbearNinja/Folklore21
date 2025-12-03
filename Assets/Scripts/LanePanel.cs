@@ -142,9 +142,21 @@ public class LanePanel : MonoBehaviour, IDropHandler
             scoreTypePopUpText.text = scoretype.ToString().Replace("_", " ") ;
         }
 
+        int multiplyer = 1;
+        int comboCounter = GameManager.Instance.scoreSystem.comboCounter;
 
+        if (comboCounter == 1)
+            multiplyer = 1;
+        else if (comboCounter == 2)
+            multiplyer = 2;
+        else if (comboCounter == 3)
+            multiplyer = 3;
+        else if (comboCounter == 4)
+            multiplyer = 5;
+        else if (comboCounter == 4)
+            multiplyer = 10;
 
-        int target = (int)scoretype;
+        int target = (int)scoretype * multiplyer;
         // Reset scale
         scoreValueText.transform.localScale = Vector3.one;
 

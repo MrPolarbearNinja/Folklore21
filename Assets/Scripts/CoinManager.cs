@@ -27,12 +27,12 @@ public class CoinManager : MonoBehaviour
         // Animate B
         int currentValue = int.Parse(coinsText.text);
         int start = int.Parse(coinsText.text);
-        int end = GameManager.Instance.coin + GameManager.Instance.coin + GameManager.Instance.points / 100;
+        int end = GameManager.Instance.coin + GameManager.Instance.points / 100;
 
         DOTween.To(() => start, x => {
             start = x;
             coinsText.text = x.ToString();
-        }, end, 0.5f)
+        }, end, 1f)
         .OnComplete(() => currentValue = end);
 
 

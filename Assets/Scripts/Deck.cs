@@ -84,9 +84,11 @@ public class Deck : MonoBehaviour
     }
 
     // Draw the top card from the deck
-    public Card DrawCard()
+    public Card DrawCard(bool hideSound = false)
     {
-        GetComponent<AudioSource>().PlayOneShot(drawSound);
+        if (!hideSound)
+            GetComponent<AudioSource>().PlayOneShot(drawSound);
+
         if (cards.Count == 0)
         {
             Debug.Log("Deck is empty, regenerating...");

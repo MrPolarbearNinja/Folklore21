@@ -64,8 +64,8 @@ public class GameManager : MonoBehaviour
     public void StartTutorial()
     {
         isInTutorial = true;
-        nextCard.ChangeCard(deck.DrawCard());
-        currentCard.ChangeCard(deck.DrawCard());
+        nextCard.ChangeCard(deck.DrawCard(true));
+        currentCard.ChangeCard(deck.DrawCard(true));
     }
     public void EndTutorial()
     {
