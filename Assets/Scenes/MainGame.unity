@@ -2028,6 +2028,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1863348218}
     m_Modifications:
+    - target: {fileID: 1515443202589636579, guid: 6fbc81a4893015246909b68ac4a212a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2728131535215101981, guid: 6fbc81a4893015246909b68ac4a212a3, type: 3}
       propertyPath: m_Name
       value: HoldingBlock
@@ -3671,7 +3675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -605.044, y: -96.38904}
+  m_AnchoredPosition: {x: -605.04395, y: -96.38904}
   m_SizeDelta: {x: -812.394, y: -196.098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &649731679
@@ -4959,7 +4963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38587502, y: 0.61600006}
   m_AnchorMax: {x: 0.92475015, y: 0.96800005}
-  m_AnchoredPosition: {x: 77.839355, y: 11.180786}
+  m_AnchoredPosition: {x: 77.83934, y: 11.180786}
   m_SizeDelta: {x: 476.9923, y: 226.40988}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &952640607
@@ -5899,7 +5903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38587502, y: 0.61600006}
   m_AnchorMax: {x: 0.92475015, y: 0.96800005}
-  m_AnchoredPosition: {x: 77.839355, y: 11.180786}
+  m_AnchoredPosition: {x: 77.83934, y: 11.180786}
   m_SizeDelta: {x: 476.9923, y: 226.40988}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1090255688
@@ -6246,7 +6250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38587502, y: 0.61600006}
   m_AnchorMax: {x: 0.92475015, y: 0.96800005}
-  m_AnchoredPosition: {x: 77.839355, y: 11.180786}
+  m_AnchoredPosition: {x: 77.83934, y: 11.180786}
   m_SizeDelta: {x: 476.9923, y: 226.40988}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1196329636
@@ -7448,7 +7452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38587502, y: 0.61600006}
   m_AnchorMax: {x: 0.92475015, y: 0.96800005}
-  m_AnchoredPosition: {x: 77.839355, y: 11.180786}
+  m_AnchoredPosition: {x: 77.83934, y: 11.180786}
   m_SizeDelta: {x: 476.9923, y: 226.40988}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1498959432
@@ -9467,7 +9471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38587502, y: 0.61600006}
   m_AnchorMax: {x: 0.92475015, y: 0.96800005}
-  m_AnchoredPosition: {x: 77.839355, y: 11.180786}
+  m_AnchoredPosition: {x: 77.83934, y: 11.180786}
   m_SizeDelta: {x: 476.9923, y: 226.40988}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1816329110
@@ -9709,7 +9713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09428048, y: 0.042544108}
   m_AnchorMax: {x: 0.56785816, y: 0.37100002}
-  m_AnchoredPosition: {x: -49.978027, y: -39.00699}
+  m_AnchoredPosition: {x: -49.978027, y: -39.007004}
   m_SizeDelta: {x: 138.8, y: 137.22}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1858651973
@@ -10716,6 +10720,7 @@ GameObject:
   - component: {fileID: 2084029838}
   - component: {fileID: 2084029837}
   - component: {fileID: 2084029836}
+  - component: {fileID: 2084029840}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -10811,6 +10816,102 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &2084029840
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084029835}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0236e3da834ee3b479c33b08ef4d2c21, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2091533710
 GameObject:
   m_ObjectHideFlags: 0
@@ -10948,6 +11049,11 @@ GameObject:
   - component: {fileID: 2091533848}
   - component: {fileID: 2091533847}
   - component: {fileID: 2091533846}
+  - component: {fileID: 2091533851}
+  - component: {fileID: 2091533850}
+  - component: {fileID: 2091533853}
+  - component: {fileID: 2091533852}
+  - component: {fileID: 2091533854}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -10986,7 +11092,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 321
     y: 154.82353
-    width: 78.40909
+    width: 76.352936
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11020,11 +11126,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -114.87589, y: -37.44444}
+  scrollPos: {x: -231.50603, y: -120.570816}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 537
-  zoom: 0.8800001
+  zoom: 0.85000014
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -11032,9 +11138,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 2091533824}
+  - {fileID: 2091533788}
   selectedCommands:
-  - {fileID: 2091533847}
+  - {fileID: 2091533854}
   variables: []
   description: 
   stepPause: 0
@@ -11270,7 +11376,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 382
     y: 322
-    width: 118.18181
+    width: 113.05881
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11282,6 +11388,8 @@ MonoBehaviour:
   - {fileID: 2091533752}
   - {fileID: 2091533774}
   - {fileID: 2091533729}
+  - {fileID: 2091533853}
+  - {fileID: 2091533852}
   - {fileID: 2091533728}
   - {fileID: 2091533773}
   - {fileID: 2091533760}
@@ -11685,7 +11793,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 433
     y: 156
-    width: 82.954544
+    width: 81.99999
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11738,8 +11846,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 784.5
-    y: 155.5
-    width: 82.954544
+    y: 154.59091
+    width: 81.99999
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11793,7 +11901,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 676
     y: 159
-    width: 84.090904
+    width: 83.88235
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11846,8 +11954,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 561
-    y: 158
-    width: 84.090904
+    y: 157.09091
+    width: 83.88235
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11872,7 +11980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 38
   indentLevel: 0
-  storyText: Ahhh, It seams i can't place more cards...
+  storyText: It seems i can't place any more cards...
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -11957,7 +12065,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: You do know that's imposible...? Right?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -11984,7 +12092,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Help you steer your fate in this forest...?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12391,7 +12499,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: 'How unfortunate for him.
 
-    Not suprising tho'
+    Not suprising tho.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -12448,7 +12556,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Maybe use some of your powers here and tilt fate in your favor?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12477,7 +12585,7 @@ MonoBehaviour:
 
     Would you like to head out again?'
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12502,9 +12610,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 66
   indentLevel: 0
-  storyText: The Fate is all layed out, there is no path forward...
+  storyText: The Fate has all been layed out, there is no path forward...
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -12599,9 +12707,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 846
-    y: 426
-    width: 123.863625
+    x: 817.70734
+    y: 468.92685
+    width: 122.47057
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12726,9 +12834,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 585
-    y: 284
-    width: 110.227264
+    x: 525.48755
+    y: 320.09756
+    width: 109.294106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12738,6 +12846,7 @@ MonoBehaviour:
   eventHandler: {fileID: 2091533787}
   commandList:
   - {fileID: 2091533786}
+  - {fileID: 2091533854}
   - {fileID: 2091533784}
   - {fileID: 2091533789}
   - {fileID: 2091533792}
@@ -13141,9 +13250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 980
-    y: 424
-    width: 101.13635
+    x: 951.70734
+    y: 466.92685
+    width: 98.94116
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13584,7 +13693,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 371.95987
     y: 460.59094
-    width: 113.63635
+    width: 111.17645
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13627,7 +13736,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 387
     y: 601
-    width: 87.5
+    width: 85.764694
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13876,7 +13985,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 634.7622
     y: 464.6034
-    width: 115.90908
+    width: 113.999985
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13990,7 +14099,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 506.92194
     y: 463.46674
-    width: 114.77272
+    width: 112.11763
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14043,9 +14152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 122
   indentLevel: 0
-  storyText: ... Hilmir write here
+  storyText: A powerful spell.
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -14087,7 +14196,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 493.28583
     y: 602.21704
-    width: 132.95453
+    width: 129.99998
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14097,6 +14206,8 @@ MonoBehaviour:
   eventHandler: {fileID: 2091533842}
   commandList:
   - {fileID: 2091533841}
+  - {fileID: 2091533851}
+  - {fileID: 2091533850}
   suppressAllAutoSelections: 0
 --- !u!114 &2091533844
 MonoBehaviour:
@@ -14151,7 +14262,7 @@ MonoBehaviour:
       typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       typeFullname: System.Int32
-      intValue: 2
+      intValue: 3
       boolValue: 0
       floatValue: 0
       stringValue: 
@@ -14171,7 +14282,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &2091533846
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14197,7 +14308,7 @@ MonoBehaviour:
     floatVal: 0
 --- !u!114 &2091533847
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14215,7 +14326,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &2091533848
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14260,6 +14371,112 @@ MonoBehaviour:
     booleanRef: {fileID: 0}
     booleanVal: 1
   targetGameObjectOLD: {fileID: 0}
+--- !u!114 &2091533850
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 131
+  indentLevel: 0
+  storyText: Try using it. It will definitely help you get through the forest.
+  description: 
+  character: {fileID: 585799720}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2091533851
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 130
+  indentLevel: 0
+  storyText: The hand of holding. Clicking on the empty slot lets you keep one card.
+    Saving it for later.
+  description: 
+  character: {fileID: 585799720}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2091533852
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 133
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: 1e32662171493c348aab68d73d8b668b, type: 3}
+  volume: 1
+  waitUntilFinished: 0
+--- !u!114 &2091533853
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 132
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: 364d41da0e5bed246a563a4a9af4823a, type: 3}
+  volume: 1
+  waitUntilFinished: 0
+--- !u!114 &2091533854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2f6be51b3d7490ba5633ee095d0391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 134
+  indentLevel: 0
+  soundClip: {fileID: 8300000, guid: 944fc0f922df31c4d81d3b60de4573f5, type: 3}
+  volume: 1
+  waitUntilFinished: 0
 --- !u!1001 &2100146114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14347,6 +14564,10 @@ PrefabInstance:
     - target: {fileID: 1943384887370783878, guid: 34e2e867abd005648a403de87a6d77ad, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 16.000107
+      objectReference: {fileID: 0}
+    - target: {fileID: 2012653522449014589, guid: 34e2e867abd005648a403de87a6d77ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2708256413791256699, guid: 34e2e867abd005648a403de87a6d77ad, type: 3}
       propertyPath: m_ChildScaleWidth
