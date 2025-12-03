@@ -130,7 +130,7 @@ public class LanePanel : MonoBehaviour
     public void PopUpScore(Score scoretype)
     {
         scorePopUp.SetActive(true);
-        this.gameObject.GetComponent<Animator>().Play("Lane_PopUp");
+        this.gameObject.GetComponent<Animator>().Play("Lane_PopUp",0,0);
 
         if (GameManager.Instance.scoreSystem.comboCounter > 1)
         {
