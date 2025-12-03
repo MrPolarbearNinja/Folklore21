@@ -9,6 +9,8 @@ public class HoldingCell : MonoBehaviour
 
     public void ChangeCard()
     {
+        if (GameManager.Instance.currentCard.card.rank == 0)
+            return;
 
         if (empty)
         {
