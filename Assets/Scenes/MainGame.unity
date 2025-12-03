@@ -9763,7 +9763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09428048, y: 0.042544108}
   m_AnchorMax: {x: 0.56785816, y: 0.37100002}
-  m_AnchoredPosition: {x: -49.978027, y: -39.00708}
+  m_AnchoredPosition: {x: -49.978035, y: -39.00708}
   m_SizeDelta: {x: 138.8, y: 137.22}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1858651973
@@ -11104,6 +11104,8 @@ GameObject:
   - component: {fileID: 2091533853}
   - component: {fileID: 2091533852}
   - component: {fileID: 2091533854}
+  - component: {fileID: 2091533856}
+  - component: {fileID: 2091533855}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -11142,7 +11144,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 321
     y: 154.82353
-    width: 75.88235
+    width: 76.352936
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11187,8 +11189,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 2091533824}
+  selectedCommands:
+  - {fileID: 2091533855}
   variables: []
   description: 
   stepPause: 0
@@ -11424,7 +11428,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 382
     y: 322
-    width: 117.058815
+    width: 113.05881
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11841,7 +11845,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 433
     y: 156
-    width: 82.94117
+    width: 81.99999
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11895,7 +11899,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 784.5
     y: 154.59091
-    width: 82.94117
+    width: 81.99999
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11949,7 +11953,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 676
     y: 159
-    width: 84.117645
+    width: 83.88235
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12003,7 +12007,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 561
     y: 157.09091
-    width: 84.117645
+    width: 83.88235
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12757,7 +12761,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 817.70734
     y: 468.92685
-    width: 124.11764
+    width: 122.47057
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12884,7 +12888,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 525.48755
     y: 320.09756
-    width: 111.17646
+    width: 109.294106
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13300,7 +13304,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 951.70734
     y: 466.92685
-    width: 101.764694
+    width: 98.94116
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13741,7 +13745,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 371.95987
     y: 460.59094
-    width: 113.5294
+    width: 111.17645
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13784,7 +13788,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 387
     y: 601
-    width: 88.823524
+    width: 85.764694
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13797,7 +13801,9 @@ MonoBehaviour:
   - {fileID: 2091533847}
   - {fileID: 2091533846}
   - {fileID: 2091533840}
+  - {fileID: 2091533855}
   - {fileID: 2091533849}
+  - {fileID: 2091533856}
   suppressAllAutoSelections: 0
 --- !u!114 &2091533825
 MonoBehaviour:
@@ -14033,7 +14039,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 634.7622
     y: 464.6034
-    width: 115.88234
+    width: 113.999985
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14147,7 +14153,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 506.92194
     y: 463.46674
-    width: 114.70587
+    width: 112.11763
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14173,9 +14179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 123
   indentLevel: 0
-  storyText: ...
+  storyText: So... Did you have a nice morning walk in the forest?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 585799720}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -14244,7 +14250,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 493.28583
     y: 602.21704
-    width: 135.88234
+    width: 129.99998
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14525,6 +14531,60 @@ MonoBehaviour:
   soundClip: {fileID: 8300000, guid: 944fc0f922df31c4d81d3b60de4573f5, type: 3}
   volume: 1
   waitUntilFinished: 0
+--- !u!114 &2091533855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 136
+  indentLevel: 0
+  storyText: Still. Nice of you to invite me as well.
+  description: 
+  character: {fileID: 585799720}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2091533856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091533710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 135
+  indentLevel: 0
+  storyText: I'm quite surprise that all this was just for some tea part.
+  description: 
+  character: {fileID: 585799720}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
 --- !u!1001 &2100146114
 PrefabInstance:
   m_ObjectHideFlags: 0
