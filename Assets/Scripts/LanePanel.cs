@@ -3,8 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
-public class LanePanel : MonoBehaviour
+public class LanePanel : MonoBehaviour, IDropHandler
 {
     public Transform cardContainer;     // Vertical Layout Group parent
     public TMP_Text valueText;          // Text at bottom showing total value
@@ -187,5 +188,16 @@ public class LanePanel : MonoBehaviour
 
         valueText.text = total.ToString();
         score = total;
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        // Try to get the draggable card script from the dropped object
+        FieldCard card = eventData.pointerDrag?.GetComponent<FieldCard>();
+
+        if (card != null)
+        {
+            AddCard(card.card);
+        }
     }
 }
