@@ -9,8 +9,8 @@ public class ScoreSystem : MonoBehaviour
 {
     public TMP_Text scoreText;
     public TMP_Text finalScoreText;
-    private int comboCounter;
-    private bool comboFlag;
+    public int comboCounter;
+    public bool comboFlag;
     public ParticleSystem sparkles;
 
     public void ScoreProccess()
@@ -45,13 +45,81 @@ public class ScoreSystem : MonoBehaviour
         {
             if (lane.score == 21)
             {
+                // Group cards by Rank and count how many of each Rank we have
+                var rankGroups = lane.cards
+                    .GroupBy(c => c.rank)
+                    .Select(g => new { rank = g.Key, Count = g.Count() })
+                    .ToList();
+
+                bool hasPair = rankGroups.Any(g => g.Count == 2);
+                bool hasThreeOfKind = rankGroups.Any(g => g.Count == 3);
+                bool hasFourOfKind = rankGroups.Any(g => g.Count == 4);
+
+                if (hasFourOfKind)
+                {
+                    AddPoints(Score.Four_of_a_kind);
+                    lane.PopUpScore(Score.Four_of_a_kind);
+                    lane.ClearLane();
+                    return;
+                }
+
+                if (hasThreeOfKind)
+                {
+                    AddPoints(Score.Three_of_a_kind);
+                    lane.PopUpScore(Score.Three_of_a_kind);
+                    lane.ClearLane();
+                    return;
+                }
+
+                if (lane.cards.Count() >= 5)
+                {
+                    AddPoints(Score.Very_Large_21);
+                    lane.PopUpScore(Score.Very_Large_21);
+                    lane.ClearLane();
+                    return;
+                }
+
+                if (lane.cards.Count() >= 4)
+                {
+                    AddPoints(Score.Large_21);
+                    lane.PopUpScore(Score.Large_21);
+                    lane.ClearLane();
+                    return;
+                }
+
+                if (hasPair)
+                {
+                    AddPoints(Score.Pair);
+                    lane.PopUpScore(Score.Pair);
+                    lane.ClearLane();
+                    return;
+                }
+
+                if (lane.cards.Count() == 2)
+                {
+                    AddPoints(Score.BlackJack);
+                    lane.PopUpScore(Score.BlackJack);
+                    lane.ClearLane();
+                    return;
+                }
+
+                if (lane.cards.Count() >= 5)
+                {
+                    AddPoints(Score.Normal_21);
+                    lane.PopUpScore(Score.Normal_21);
+                    lane.ClearLane();
+                    return;
+                }
+
                 AddPoints(Score.Normal_21);
+                lane.PopUpScore(Score.Normal_21);
                 lane.ClearLane();
                 return;
             }
+
+            //Fail catch
             else if (lane.score > 21)
             {
-                Debug.Log("You Blew up");
                 GameManager.Instance.RestartGame();
             }
         }

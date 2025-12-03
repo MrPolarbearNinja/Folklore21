@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class LanePanel : MonoBehaviour
 {
@@ -10,7 +11,12 @@ public class LanePanel : MonoBehaviour
     public int score;                   // The score for this Lane
     public GameObject cardPrefab;       // prefab to spawn
     public GameObject ghostCardPrefab;  // prefab to spawn
-    private List<Card> cards = new List<Card>();
+    public List<Card> cards = new List<Card>();
+
+    public GameObject scorePopUp;
+
+    public TMP_Text scoreTypePopUpText;
+    public TMP_Text scoreValueText;
 
     private GameObject ghostCard;
            
@@ -119,6 +125,39 @@ public class LanePanel : MonoBehaviour
     public List<Card> GetAllCards()
     {
         return cards;
+    }
+
+    public void PopUpScore(Score scoretype)
+    {
+        scorePopUp.SetActive(true);
+        this.gameObject.GetComponent<Animator>().Play("Lane_PopUp");
+
+        if (GameManager.Instance.scoreSystem.comboCounter > 1)
+        {
+            scoreTypePopUpText.text = scoretype.ToString().Replace("_", " ") + " COMBO";
+        }
+        else
+        {
+            scoreTypePopUpText.text = scoretype.ToString().Replace("_", " ") ;
+        }
+
+
+
+        int target = (int)scoretype;
+        // Reset scale
+        scoreValueText.transform.localScale = Vector3.one;
+
+        // Number tween
+        int currentValue = 0;
+        DOTween.To(() => currentValue, x =>
+        {
+            currentValue = x;
+            scoreValueText.text = currentValue.ToString();
+        },
+        target, 0.6f).SetEase(Ease.OutQuad);
+
+        // Bunch / punch scale
+        scoreValueText.transform.DOPunchScale(new Vector3(0.25f, 0.25f, 0), 0.4f, 10, 1f);
     }
 
     void UpdateValueDisplay(int extra = 0)
