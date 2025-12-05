@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
     //When you finish the deck
     public void ProgressAdventure()
     {
-        if (adventureStage >= 5)
+        if (adventureStage >= 4)
         {
             VictoryTrigger();
             return;
